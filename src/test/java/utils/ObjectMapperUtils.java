@@ -14,12 +14,12 @@ public class ObjectMapperUtils {
     }
 
     //Json'u Java'ya çevirecek methodu yapmalıyız
-    public static <T> T convertJsonToJava(String json, Class<T> cls) {
+    public static <T> T convertJsonToJava(String json, Class<T> cls) { //Generic method
 
         T javaResult = null;
 
         try {
-            mapper.readValue(json,cls);
+           javaResult = mapper.readValue(json,cls);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
